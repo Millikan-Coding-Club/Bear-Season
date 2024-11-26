@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://caif5mpofx80n"]
+[gd_scene load_steps=9 format=3 uid="uid://caif5mpofx80n"]
 
 [ext_resource type="Script" path="res://scripts/MasterScipt.gd" id="1_jvv1h"]
 [ext_resource type="PackedScene" uid="uid://dt7ncp20c0wu8" path="res://scenes/player.tscn" id="2_ujij5"]
-[ext_resource type="Terrain3DMaterial" uid="uid://dnnod6a0c3pi8" path="res://i dunno/material.res" id="3_8psy7"]
-[ext_resource type="Terrain3DAssets" uid="uid://clu87riycp8t0" path="res://i dunno/assets.res" id="4_nmnvh"]
+[ext_resource type="PackedScene" uid="uid://0wtjusefebwm" path="res://scenes/terrain.tscn" id="3_6idw8"]
+[ext_resource type="PackedScene" uid="uid://h5gp58drtrmo" path="res://models/light/scene.gltf" id="4_3r4np"]
+[ext_resource type="PackedScene" uid="uid://xt2ae77ubu1k" path="res://models/tent/scene.gltf" id="5_wskop"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0rf8b"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -13,44 +14,43 @@ ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 sky_material = SubResource("ProceduralSkyMaterial_0rf8b")
 
 [sub_resource type="Environment" id="Environment_6kdel"]
-background_mode = 2
+background_mode = 1
+background_color = Color(0.0712314, 0.0712314, 0.0712314, 1)
+background_energy_multiplier = 0.4
 sky = SubResource("Sky_2duxr")
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_r75db"]
-data = PackedVector3Array(5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, 5, -5, 0, -5, 5, 0, -5)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_ekxam"]
-size = Vector2(5, 5)
 
 [node name="Game" type="Node3D"]
 script = ExtResource("1_jvv1h")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+transform = Transform3D(0.0460263, 0.994391, 0.0952236, 0.0591216, 0.0924459, -0.993961, -0.997189, 0.0513781, -0.0545351, 0, 0, 1.19209e-07)
+visible = false
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_6kdel")
 
 [node name="Player" parent="." instance=ExtResource("2_ujij5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.26498, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.91476, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.10035, 0)
+[node name="Terrain" parent="." instance=ExtResource("3_6idw8")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -1.39718, 0)
-shape = SubResource("ConcavePolygonShape3D_r75db")
+[node name="light" parent="." instance=ExtResource("4_3r4np")]
+transform = Transform3D(0.00649068, 0, 0, 0, 0.00649068, 0, 0, 0, 0.00649068, 2.5484, 9.10391, -1.33101)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.39718, 0)
-mesh = SubResource("PlaneMesh_ekxam")
-skeleton = NodePath("../..")
+[node name="SpotLight3D" type="SpotLight3D" parent="light"]
+transform = Transform3D(154.067, 0, 0, 0, 4.59155e-06, 154.067, 0, -154.067, 4.59155e-06, 1.03809, 253.658, -1.44852)
+spot_attenuation = 10.0
 
-[node name="Terrain3D" type="Terrain3D" parent="."]
-data_directory = "res://i dunno"
-material = ExtResource("3_8psy7")
-assets = ExtResource("4_nmnvh")
-top_level = true
+[node name="OmniLight3D" type="OmniLight3D" parent="light"]
+transform = Transform3D(154.067, 0, 0, 0, 154.067, 0, 0, 0, 154.067, -0.184235, 140.67, 1.56798)
+light_energy = 0.5
+distance_fade_begin = 3.96
+distance_fade_length = 6.04
+omni_range = 28.283
+omni_attenuation = -0.789
+
+[node name="Tent" parent="." instance=ExtResource("5_wskop")]
+transform = Transform3D(0.559893, 8.92456e-09, 2.51141, -0.193328, 2.56543, 0.0431006, -2.50395, -0.198074, 0.558232, -3.90591, 7.2582, -1.74078)
