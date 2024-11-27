@@ -1,0 +1,130 @@
+[gd_scene load_steps=11 format=3 uid="uid://cjibdk6nhhmjo"]
+
+[ext_resource type="Script" path="res://scripts/bear.gd" id="1_y3fd8"]
+[ext_resource type="PackedScene" uid="uid://d0mrrv4jya554" path="res://models/bear/scene.gltf" id="2_ulb87"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2rwh8"]
+points = PackedVector3Array(-0.267808, -0.166766, 0.74636, -0.373767, 0.541352, 0.61819, -0.0813666, 0.43452, 0.8653, -0.525367, 0.570183, 0.828373, -0.303367, -0.0954571, 0.955651, -0.315666, -0.107977, 0.569389, -0.414367, -0.0956163, 0.877627, -0.155381, -0.120261, 0.643408, -0.106053, 0.48381, 1.06259, -0.406383, -0.107791, 0.65848, -0.463652, 0.570183, 0.631081, -0.222084, -0.124139, 0.911016, -0.256589, 0.504882, 0.677624, -0.340352, 0.582467, 1.12423, -0.155381, 0.557822, 1.08725, -0.0813666, 0.459165, 1.01328, -0.217053, -0.0833324, 0.594099, -0.513024, 0.582467, 0.717428, -0.413669, 0.157467, 0.952258, -0.106053, 0.446804, 0.816046, -0.350695, -0.16599, 0.817543, -0.175341, -0.1249, 0.783215, -0.291067, 0.607267, 1.12423, -0.232989, 0.564499, 1.12278, -0.362788, -0.156202, 0.638874, -0.416423, 0.551863, 1.02263, -0.360317, -0.118074, 0.921371, -0.256047, -0.154064, 0.900274, -0.247139, -0.0573952, 0.954195, -0.315666, 0.582467, 1.13656, -0.40741, -0.122571, 0.679651, -0.278724, -0.107977, 0.569389)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tcrqk"]
+points = PackedVector3Array(-0.296548, -0.161079, -0.22909, -0.28354, 0.423106, 0.103223, -0.295894, 0.424118, 0.104471, -0.336802, 0.500295, -0.259227, -0.0635159, -0.0982923, -0.285296, -0.128639, 0.539353, -0.051055, -0.445185, 0.600045, -0.0295591, -0.235276, -0.000162608, 0.0395684, -0.336802, -0.13735, -0.311318, -0.349835, -0.111257, -0.0770766, -0.102613, -0.124304, -0.0900873, -0.466968, 0.513342, -0.116109, -0.115646, -0.0852459, -0.35035, -0.167696, 0.48733, -0.207184, -0.297744, 0.656608, 0.0530783, -0.378878, 0.2401, 0.0508616, -0.187894, 0.394804, 0.061912, -0.349835, 0.578411, 0.105121, -0.219747, -0.072281, -0.363408, -0.133834, -0.160567, -0.291625, -0.271456, -0.134438, -0.0290018, -0.425226, 0.251834, -0.045592, -0.0635159, -0.124304, -0.207184, -0.206754, 0.474284, -0.246217, -0.297744, 0.604504, 0.105121, -0.319731, 0.046216, 0.0409551, -0.307833, 0.288683, 0.102611, -0.200507, 0.287113, 0.071739, -0.141671, 0.48733, -0.181116, -0.453936, 0.565446, -0.129073, -0.125761, 0.446361, -0.0316313, -0.426365, 0.44301, 0.0146694)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qm6ql"]
+points = PackedVector3Array(0.255269, -0.168053, 0.769787, 0.373279, 0.54134, 0.61818, 0.0808333, 0.434481, 0.865328, 0.524833, 0.570157, 0.828343, 0.413833, -0.108147, 0.877657, 0.315133, -0.108147, 0.569333, 0.235247, -0.102991, 0.931851, 0.154848, -0.120432, 0.643415, 0.0808333, 0.459128, 1.01327, 0.407461, -0.124626, 0.667067, 0.463162, 0.570157, 0.631087, 0.154848, 0.557795, 1.08724, 0.339819, 0.582442, 1.12428, 0.25611, 0.504502, 0.67784, 0.154848, -0.120432, 0.779029, 0.302833, -0.0945887, 0.955344, 0.216519, -0.0835, 0.594046, 0.51249, 0.582442, 0.717386, 0.117862, 0.496138, 1.07491, 0.416218, 0.552695, 1.02306, 0.290534, 0.607167, 1.12428, 0.314717, -0.16881, 0.853, 0.362344, -0.15667, 0.638711, 0.0931763, 0.446766, 0.840671, 0.232592, 0.563789, 1.12236, 0.41337, 0.157225, 0.952471, 0.221812, -0.123224, 0.910862, 0.347154, -0.086634, 0.941616, 0.315133, 0.582442, 1.13667, 0.339819, -0.095785, 0.581717, 0.278191, -0.108147, 0.569333, 0.349195, 0.525407, 0.621261)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_r1x83"]
+points = PackedVector3Array(0.199312, -0.161262, -0.304356, 0.298692, 0.423136, 0.10336, 0.28661, 0.423836, 0.104223, 0.326732, 0.500295, -0.259175, 0.131582, 0.539353, -0.050955, 0.339766, -0.111257, -0.0379442, 0.105554, -0.124304, -0.0900345, 0.45695, 0.565446, -0.12902, 0.0795258, -0.0852459, -0.311218, 0.326732, -0.150315, -0.311218, 0.404895, 0.64348, 0.0271568, 0.15761, 0.48733, -0.194074, 0.15761, -0.072281, -0.363308, 0.427433, 0.275353, -0.0340693, 0.20238, 0.299936, 0.0751907, 0.238151, -0.00110356, 0.0403035, 0.235772, 0.630515, 0.0271568, 0.380965, 0.2401, 0.0496122, 0.0664921, -0.124304, -0.194074, 0.352839, -0.13735, -0.103045, 0.209705, 0.474284, -0.246164, 0.383954, 0.556875, 0.0785421, 0.2618, -0.0982923, -0.35025, 0.310587, 0.288403, 0.101414, 0.430922, 0.539353, -0.181063, 0.339766, -0.13735, -0.298207, 0.262092, -0.132646, -0.0293496, 0.133059, 0.439927, -0.0226168, 0.174126, -0.161705, -0.153893, 0.323503, 0.633618, 0.0803582, 0.442044, 0.503699, -0.0206582, 0.131582, 0.48733, -0.168052)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ljgwt"]
+height = 2.53
+
+[sub_resource type="Animation" id="Animation_3ayw0"]
+resource_name = "death"
+length = 0.54
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sketchfab_Scene:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.54),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -1.57174)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sketchfab_Scene:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.54),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.273842, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mjbar"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sketchfab_Scene:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sketchfab_Scene:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_li24j"]
+_data = {
+"RESET": SubResource("Animation_mjbar"),
+"death": SubResource("Animation_3ayw0")
+}
+
+[node name="Bear" type="CharacterBody3D"]
+script = ExtResource("1_y3fd8")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_ulb87")]
+
+[node name="PFT7TOLW1O68QOYQM5AT957UC_mat_0-bear_co_jpg_0" parent="Sketchfab_Scene/Sketchfab_model/untitled_fbx/RootNode/PFT7TOLW1O68QOYQM5AT957UC" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="PFT7TOLW1O68QOYQM5AT957UC_002_mat_0-bear_co_jpg_0" parent="Sketchfab_Scene/Sketchfab_model/untitled_fbx/RootNode/PFT7TOLW1O68QOYQM5AT957UC_002" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.151059, 0.0239463)
+shape = SubResource("ConvexPolygonShape3D_2rwh8")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.151059, 0.0239463)
+shape = SubResource("ConvexPolygonShape3D_tcrqk")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.151059, 0.0239463)
+shape = SubResource("ConvexPolygonShape3D_qm6ql")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.151059, 0.0239463)
+shape = SubResource("ConvexPolygonShape3D_r1x83")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="UpdatePath" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="Hitbox" type="Area3D" parent="."]
+collision_layer = 9
+collision_mask = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.06044, 0.0330557)
+shape = SubResource("CapsuleShape3D_ljgwt")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_li24j")
+}
+
+[connection signal="timeout" from="UpdatePath" to="." method="_on_update_path_timeout"]
+
+[editable path="Sketchfab_Scene"]
